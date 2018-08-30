@@ -13,3 +13,31 @@ Caveats:
  * Does not react to P2P group creation
  * Cannot start the DHCP server (or client) because of this
  * No support for audio streaming so far
+
+Current status:
+
+1. Restart wpa_supplicant
+
+    sudo systemctl stop wpa_supplicant.service
+    sudo systemctl start wpa_supplicant.service
+
+2. Configure wpa_supplicant
+
+    sudo ./rtsp.py 123456789123 pbc
+
+3. Search devices from phone mobile (search for sinks for example)
+
+4. Detect peers:
+
+    sudo d-feet
+
+    f1.w1.wpa_supplicant1.Interface.P2PDevice Peers
+
+5. Start source:
+ 
+    sudo ./rtsp.py 123456789123 pbc
+
+6. Start streaming:
+
+    sudo .run.sh
+
