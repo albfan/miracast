@@ -1,11 +1,15 @@
 #!/bin/bash
 
+#set -xv
+
 dev=""
+
+p2p_interface="p2p-wlp3s0"
 
 while [ "$dev" = "" ]
 do
    sleep 0.01
-   dev=$( iw dev | sed -n 's/Interface \(p2p-wlp4s0-.*\)/\1/p')
+   dev=$( iw dev | sed -n 's/Interface \('$p2p_interface'-.*\)/\1/p')
 done
 
 echo $dev
